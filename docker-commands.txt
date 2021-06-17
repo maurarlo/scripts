@@ -1,0 +1,5 @@
+#Create a container from a docker compose file:
+docker-compose -f docker-compose.yml up
+
+#Create a container from a several docker compose files:
+docker-compose -f docker-compose-tests.yml -f docker-compose-test.override.yml up
