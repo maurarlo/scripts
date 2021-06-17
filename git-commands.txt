@@ -1,0 +1,7 @@
+#Merge from parent branch:
+git checkout main
+git pull
+git checkout dev-user
+git pull
+git merge main
+git push
