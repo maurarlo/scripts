@@ -1,0 +1,41 @@
+KUBECTL
+# Create OPA Istio
+kubectl apply -f .\file-name.yml
+
+# Create deployment
+kubectl create deploy 
+
+# Add injection label
+kubectl label namespace default opa-istio-injection="enabled"
+kubectl label namespace default istio-injection="enabled"
+
+# Which namespaces are marked to inject OPA
+kubectl get namespace -L istio-injection
+
+# Restart deployment:
+kubectl rollout restart deployment [deployment_name]
+
+# Escale POD:
+kubectl scale --replicas=1 deploy deploy-name -n sandbox
+
+
+MINIKUBE
+
+minikube start
+
+# Load external images
+minikube image load docker-image:latest
+
+# Start service
+minikube service service-name
+
+# Open Tunnel
+minikube tunnel
+
+# Delete all
+minikube delete --all
+
+ISTIO
+
+# Start
+istioctl install --set profile=demo -y
